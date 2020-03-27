@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="15dp"
+    android:background="@drawable/button_black_background">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_profile_image_search"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/profile" />
+
+        <TextView
+            android:id="@+id/user_name_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_profile_image_search"
+            android:layout_margin="5dp"
+            android:gravity="center_horizontal"
+            android:text="user name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/user_fullname_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_name_search"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="user fullname"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/follow_btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_fullname_search"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:textAllCaps="false"
+            android:background="@drawable/button_black_background"
+            android:text="Follow" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

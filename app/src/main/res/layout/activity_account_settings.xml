@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountSettingsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/profile_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@android:color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/close_profile_btn"
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/close" />
+
+                <ImageView
+                    android:id="@+id/save_info_profile_btn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/save_edited_info" />
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image_view_profile_frag"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_below="@id/app_bar_layout_profile"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/profile" />
+
+    <TextView
+        android:id="@+id/change_image_text_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_image_view_profile_frag"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:text="Change image"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/full_name_profile_frag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/change_image_text_btn"
+        android:layout_margin="10dp"
+        android:hint="Full name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/username_profile_frag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/full_name_profile_frag"
+        android:layout_margin="10dp"
+        android:hint="User name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/bio_porfile_frag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username_profile_frag"
+        android:layout_margin="10dp"
+        android:hint="Bio"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/logout_profile_frag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/delete_account"
+        android:layout_margin="15dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/button_black_background"
+        android:textAllCaps="false"
+        android:text="Logout" />
+
+    <Button
+        android:id="@+id/delete_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:text="Delete Account"/>
+
+
+</RelativeLayout>
