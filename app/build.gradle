@@ -7,8 +7,10 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
 
 android {
+
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
+    flavorDimensions "default"
     defaultConfig {
         applicationId "com.example.myinstagram"
         minSdkVersion 19
@@ -19,10 +21,42 @@ android {
     }
     buildTypes {
         release {
+            applicationVariants.all {variant ->
+                variant.outputs.all{
+                    outputFileName = "MyInstagram_${variant.versionName}_${variant.name}.apk"
+                }
+
+            }
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\Rohit Reddy\\AndroidStudioProjects\\MyInstagram\\rohitKeystore.jks')
+            storePassword 'rohit02101994'
+            keyAlias = 'myKeyid'
+            keyPassword 'rohit021094'
+        }
+
+        debug {
+            storeFile file('C:\\Users\\Rohit Reddy\\AndroidStudioProjects\\MyInstagram\\rohitKeystore.jks')
+            storePassword 'rohit02101994'
+            keyAlias = 'myKeyid'
+            keyPassword 'rohit021094'
+        }
+    }
+
+    productFlavors{
+        def val = signingConfigs.release
+
+        prod{
+            signingConfig val
+        }
+    }
+
 }
 
 dependencies {
